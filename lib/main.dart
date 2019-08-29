@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+// import 'routers/routers.dart';
+// import 'routers/application.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  runApp(new MyApp());
+} 
 
 class MyApp extends StatelessWidget {
   @override
