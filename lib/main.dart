@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo xxx',
       theme: ThemeData(
-        primaryColor: Color(0xff584f60),
+        primaryColor: Color(0xff285566),
       ),
-      color: Color(0xff000000),
+      color: Color(0xffffffff),
       home: new MyHomePage(title: 'FlutterScreenUtil Demo'),
     );
   }
@@ -39,12 +39,21 @@ class _MyHomePageState extends State<MyHomePage> {
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true)
           ..init(context);
 
-    Image buildImage(String imageUrl, double width, double height) {
+    Image buildLocalImage(String localUrl, double width, double height) {
       return Image.asset(
-        imageUrl,
+        localUrl,
         width: ScreenUtil.getInstance().setWidth(width),
         height: ScreenUtil.getInstance().setWidth(height),
         fit: BoxFit.cover,
+      );
+    }
+
+    Image buildHttpImage(String httpUrl, double width, double height) {
+      return Image.network(
+        httpUrl,
+        width: ScreenUtil.getInstance().setWidth(width),
+        height: ScreenUtil.getInstance().setWidth(height),
+        fit: BoxFit.cover, 
       );
     }
 
@@ -131,9 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          buildImage('assets/images/carnival_03.jpg', 274, 441),
-          buildImage('assets/images/carnival_04.jpg', 203, 441),
-          buildImage('assets/images/carnival_05.jpg', 273, 441),
+          buildLocalImage('assets/images/lite_03.jpg', 274, 441),
+          buildLocalImage('assets/images/lite_04.jpeg', 203, 441),
+          buildLocalImage('assets/images/lite_05.jpg', 273, 441),
         ],
       ),
     );
@@ -162,18 +171,16 @@ class _MyHomePageState extends State<MyHomePage> {
     printScreenSize();
 
     return new Scaffold(
-      appBar: AppBar(title: Text('卡路里狂欢节')),
+      appBar: AppBar(title: Text('轻食派对')),
       body: ListView(
         children: [
-          buildImage('assets/images/carnival_01.jpg', 750.0, 660.5),
-          buildImage('assets/images/carnival_02.jpg', 750.0, 319),
+          buildHttpImage('http://img95.699pic.com/photo/50105/0194.jpg_wh860.jpg', 750.0, 400),
+          buildHttpImage('https://cp1.douguo.com/upload/caiku/a/d/1/yuan_ad5b7c89ccd12aa547f601b8ca36e931.jpg', 750.0, 400),
+          buildLocalImage('assets/images/lite_01.jpg', 750.0, 660.5),
+          buildLocalImage('assets/images/lite_02.jpeg', 750.0, 319),
           prodSection,
-          buildImage('assets/images/carnival_06.jpg', 750.0, 519),
-          buildImage('assets/images/carnival_07.jpg', 750.0, 426),
-          buildImage('assets/images/carnival_08.jpg', 750.0, 342),
-          buildImage('assets/images/carnival_09.jpg', 750.0, 383),
-          buildImage('assets/images/carnival_10.jpg', 750.0, 3102),
-          buildImage('assets/images/carnival_11.jpg', 750.0, 1423),
+          buildLocalImage('assets/images/lite_06.jpg', 750.0, 319),
+          buildLocalImage('assets/images/lite_07.jpg', 750.0, 319),
           titleSection,
           buttonSection,
           textSection,
