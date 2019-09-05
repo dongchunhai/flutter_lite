@@ -18,3 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 ## ScreenUtil adapt to verious screen
 
 - [screenutil demo](https://github.com/dongchunhai/flutter_lite/blob/master/lib/main.dart)
+
+参考 [flutter-go](https://github.com/alibaba/flutter-go)
