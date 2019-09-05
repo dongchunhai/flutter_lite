@@ -1,119 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluro/fluro.dart';
-import 'routers/routers.dart';
-import 'routers/application.dart';
-import 'package:startup_style/utils/provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:startup_style/utils/shared_preferences.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:startup_style/utils/data_utils.dart';
-import 'package:startup_style/model/widget.dart';
-import 'package:startup_style/views/home.dart';
 
-const int ThemeColor = 0xff285566;
-SpUtil sp;
-var db;
-
-void main() async {
-  final provider = new Provider();
-  await provider.init(true);
-  sp = await SpUtil.getInstance();
-
-  await DataUtils.getWidgetTreeList().then((List json) {
-    List data = WidgetTree.insertDevPagesToList(json, [
-      {},
-      { "id": "5d7178d0_42ae_4241_9c8a_5c9e1f92b096", "name": "local", "email": "hanxu@qq.com", "author": "hnaxu"}
-,
-      { "id": "84f38e00_42ae_4241_9c8a_5c9e1f92b096", "name": "test", "email": "adsf.com", "author": "abc"}
-,
-      { "id": "ee4feb8e_32ae_4241_9c8a_5c9e1f92b096", "name": "standard", "email": "hanxu317@qq.com", "author": "sanfan"}
-,
-      { "id": "8ab2b5c2_42ae_4241_9c8a_5c9e1f92b096", "name": "standard_for_slider", "email": "hanxu@qq.com", "author": "sanfan"}
-    ]);
-    Application.widgetTree = WidgetTree.buildWidgetTree(data);
-    print("Application.widgetTree>>>> ${Application.widgetTree}");
-  });
-  db = Provider.db;
-  runApp(new MyApp());
-} 
-
-class MyApp extends StatefulWidget {
-  MyApp() {
-    final router = new Router();
-
-    Routes.configureRoutes(router);
-
-    Application.router = router;
-  }
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  bool _hasLogin = false;
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _hasLogin = true;
-    _isLoading = false;
-  }
-
-  showWelcomePage() {
-    if (_isLoading) {
-      return Container(
-        color: const Color(ThemeColor),
-        child: Center(
-          child: SpinKitPouringHourglass(color: Colors.white),
-        ),
-      );
-    } else {
-      // 判断是否已经登录
-      if (_hasLogin) {
-        return AppPage();
-      } else {
-        // return LoginPage();
-      }
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'title',
-      theme: new ThemeData(
-        primaryColor: Color(ThemeColor),
-        backgroundColor: Color(0xFFEFEFEF),
-        accentColor: Color(0xFF888888),
-        textTheme: TextTheme(
-          //设置Material的默认字体样式
-          body1: TextStyle(color: Color(0xFF888888), fontSize: 16.0),
-        ),
-        iconTheme: IconThemeData(
-          color: Color(ThemeColor),
-          size: 35.0,
-        ),
-      ),
-      home: new Scaffold(body: showWelcomePage()),
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: Application.router.generator,
-      // navigatorObservers: <NavigatorObserver>[Analytics.observer],
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MenuPage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     /// Set the fit size (fill in the screen size of the device in the design) If the design is based on the size of the iPhone6 ​​(iPhone6 ​​750*1334)
@@ -257,13 +147,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text('轻食派对')),
       body: ListView(
         children: [
-          buildHttpImage('http://img95.699pic.com/photo/50105/0194.jpg_wh860.jpg', 750.0, 400),
-          buildHttpImage('https://cp1.douguo.com/upload/caiku/a/d/1/yuan_ad5b7c89ccd12aa547f601b8ca36e931.jpg', 750.0, 400),
-          buildLocalImage('assets/images/lite_01.jpg', 750.0, 660.5),
-          buildLocalImage('assets/images/lite_02.jpeg', 750.0, 319),
+          buildHttpImage('http://img95.699pic.com/photo/50105/0194.jpg_wh860.jpg', 750.0, 660),
+          buildHttpImage('https://cp1.douguo.com/upload/caiku/a/d/1/yuan_ad5b7c89ccd12aa547f601b8ca36e931.jpg', 750.0, 660),
+          buildLocalImage('assets/images/lite_01.jpg', 750.0, 660),
+          buildLocalImage('assets/images/lite_02.jpeg', 750.0, 660),
           prodSection,
-          buildLocalImage('assets/images/lite_06.jpg', 750.0, 319),
-          buildLocalImage('assets/images/lite_07.jpg', 750.0, 319),
+          buildLocalImage('assets/images/lite_06.jpg', 750.0, 660),
+          buildLocalImage('assets/images/lite_07.jpg', 750.0, 660),
           titleSection,
           buttonSection,
           textSection,
