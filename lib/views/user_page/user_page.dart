@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import "package:startup_style/routers/application.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class UserPage extends StatelessWidget {
   final String id;
@@ -13,7 +14,7 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0.0,
         centerTitle: true,
         title: Text(
@@ -39,6 +40,7 @@ class UserPage extends StatelessWidget {
 }
 
 class UserPageContent extends StatelessWidget {
+  SvgPicture member = SvgPicture.asset('assets/images/icon_b_members_2.svg');
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,11 +66,7 @@ class UserPageContent extends StatelessWidget {
                     right: ScreenUtil.getInstance().setSp(14)),
                 child: Stack(
                   children: <Widget>[
-                    Image.asset(
-                      'assets/images/blank.jpg',
-                      width: ScreenUtil.getInstance().setWidth(600),
-                      height: ScreenUtil.getInstance().setWidth(100),
-                    ),
+                    member,
                     Positioned(
                       left: ScreenUtil.getInstance().setWidth(25),
                       top: ScreenUtil.getInstance().setWidth(14),
