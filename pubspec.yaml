@@ -61,7 +61,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
   - assets/images/
-  - assets/images/share/
+  # 2.0x 3.0x 图标如下配置：
+  - assets/images/wechat.png
+  - assets/images/wechatFriend.png
+  - assets/images/2.0x/wechat.png
+  - assets/images/2.0x/wechatFriend.png
+  - assets/images/3.0x/wechat.png
+  - assets/images/3.0x/wechatFriend.png
   - assets/app.db
   # - assets/fonts/
 

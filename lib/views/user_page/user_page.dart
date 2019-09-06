@@ -174,7 +174,7 @@ class UserPageContent extends StatelessWidget {
                 new IconButton(
                     padding: EdgeInsets.zero,
                     iconSize: ScreenUtil.getInstance().setWidth(60),
-                    icon: new Image.asset("assets/images/share/wechat@3x.png"),
+                    icon: new Image.asset("assets/images/wechat.png"),
                     onPressed: () {
                       print("share to wechat");
                     }),
@@ -184,7 +184,7 @@ class UserPageContent extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       iconSize: ScreenUtil.getInstance().setWidth(60),
                       icon: new Image.asset(
-                          "assets/images/share/wechatFriend.png"),
+                          "assets/images/wechatFriend.png"),
                       onPressed: () {
                         print("share to qq");
                       }),
