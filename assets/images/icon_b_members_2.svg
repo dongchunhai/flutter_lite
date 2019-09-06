@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="23px" viewBox="0 0 66 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_b_members_2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="5.65579085%" y1="17.8776761%" x2="114.494575%" y2="87.5310756%" id="linearGradient-1">
+            <stop stop-color="#634C2B" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0,0 L63.6161368,0 C64.7207063,-2.02906125e-16 65.6161368,0.8954305 65.6161368,2 L65.6161368,21 C65.6161368,22.1045695 64.7207063,23 63.6161368,23 L7.61613681,23 C6.51156731,23 5.61613681,22.1045695 5.61613681,21 L5.61613681,6.82604497 L0,0 Z" id="path-2"></path>
+        <filter x="-51.8%" y="-113.0%" width="203.6%" height="395.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon_b_members_2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <g id="Rectangle-Copy-3" transform="translate(32.808068, 11.500000) scale(-1, 1) translate(-32.808068, -11.500000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <text id="会员价-copy" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FAE895">
+                <tspan x="6" y="18">会员价</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
